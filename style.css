@@ -1,0 +1,102 @@
+body{
+    height: 98vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: blanchedalmond;
+}
+
+.title{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-top: 5px;
+}
+
+
+.outputContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.scores{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+#roundResult{
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    font-family: Courier, monospace;
+    font-size: 25px;
+    font-weight: bolder;
+    margin-top: 50px;
+}
+
+.inputContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.imageContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    padding: 25px;
+    margin: 5px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color: cadetblue;
+    color: rgb(0, 0, 0)
+}
+
+.gameResult{
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+    font-family:  Courier, monospace;
+    font-weight: bolder;
+}
+
+.result{
+    padding: 15px;
+    border-radius: 15px;
+    background-color:blanchedalmond;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    align-items: center;
+}
+
+footer div, .box{
+    padding: 15px;
+    border-radius: 15px;
+    background-color: cadetblue;
+}
+
+#links{
+    padding-bottom: 5px;
+    padding-top: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#links img{
+    margin-left: 5px;
+    margin-right: 5px;
+}

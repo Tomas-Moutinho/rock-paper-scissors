@@ -4,10 +4,48 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="style.css">
+        <script defer src="script.js"></script>
     </head>
     <body>
-        <script src="script.js"></script>
-        <h1 style="text-align: center;">Open Console</h1>
-        
+        <div class="title">Rock Paper Scissors Game</div>
+        <div class="outputContainer">
+            <div class="scores">
+                <div class="imageContainer">
+                    <img src="images/player.png" width="190px">
+                    <div class="box">SCORE: <span id="playerS">0</span></div>
+                </div>
+                <div class="imageContainer">
+                    <img src="images/computer.png" width="190px">
+                    <div class="box">SCORE: <span id="computerS">0</span></div>
+                </div>
+            </div>
+            <div id="roundResult"></div>
+        </div>
+
+        <div class="inputContainer">
+            <div class="imageContainer">
+                <img src="images/rock.png" width="165px">
+                <button id="rockButton">Rock</button> 
+            </div>
+            <div class="imageContainer">
+                <img src="images/paper.png" width="165px">
+                <button id="paperButton">Paper</button>
+            </div>
+            <div class="imageContainer">
+                <img src="images/scissors.png" width="165px">
+                <button id="scissorsButton">Scissors</button>
+            </div>
+        </div>
+        <div class="gameResult">
+            <div id="result"></div>
+        </div>
+        <footer>
+            <div>Images: <a href="https://www.iconfinder.com/" target="_blank" rel="noopener noreferrer">IconFinder</a></div>
+            <div id="links">
+                <a href="https://www.theodinproject.com/" target="_blank" rel="noopener noreferrer"><img src="images/odin.png" width="30px" height="30px"></a>
+                <a href="https://github.com/Tomas-Moutinho" target="_blank" rel="noopener noreferrer"><img src="images/github.png" width="30px" height="30px"></a>
+            </div>
+        </footer>
     </body>
 </html>

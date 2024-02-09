@@ -1,5 +1,15 @@
+const rockButton = document.querySelector('#rockButton');
+const paperButton = document.querySelector('#paperButton');
+const scissorsButton = document.querySelector('#scissorsButton');
+
 let computerScore = 0;
 let playerScore = 0;
+
+const roundResult = document.querySelector('#roundResult');
+const computerS = document.querySelector('#computerS');
+const playerS = document.querySelector('#playerS');
+const result = document.querySelector('#result');
+
 
 function getComputerChoice(x)
 {
@@ -18,12 +28,74 @@ function getComputerChoice(x)
     }
 }
 
-function playRound(player_Selection, computer_Selection)
+
+rockButton.addEventListener('click', () => {
+    player_Selection = "rock";
+    if(playerScore < 5 && computerScore < 5)
+    {
+        playRound(player_Selection);
+    }
+    if(playerScore == 5)
+    {
+        result.style.cssText = "color: blanchedalmond; background-color: cadetblue; border-radius: 15px; padding: 8px";
+        result.textContent = "You Won!"
+    }
+
+    if(computerScore == 5)
+    {
+        result.style.cssText = "color: blanchedalmond; background-color: cadetblue; border-radius: 15px; padding: 8px";
+        result.textContent = "You Loose!"
+    }
+})
+
+paperButton.addEventListener('click', () => {
+    player_Selection = "paper";
+    if(playerScore < 5 && computerScore < 5)
+    {
+        playRound(player_Selection);
+    }
+
+    if(playerScore == 5)
+    {
+        result.style.cssText = "color: blanchedalmond; background-color: cadetblue; border-radius: 15px; padding: 8px";
+        result.textContent = "You Won!";
+    }
+
+    if(computerScore == 5)
+    {
+        result.style.cssText = "color: blanchedalmond; background-color: cadetblue; border-radius: 15px; padding: 8px";
+        result.textContent = "You Loose!";
+    }
+})
+
+scissorsButton.addEventListener('click', () => {
+    player_Selection = "scissors";
+    if(playerScore < 5 && computerScore < 5)
+    {
+        playRound(player_Selection);
+    }
+    if(playerScore == 5)
+    {
+        result.style.cssText = "color: blanchedalmond; background-color: cadetblue; border-radius: 15px; padding: 8px";
+        result.textContent = "You Won!"
+    }
+
+    if(computerScore == 5)
+    {
+        result.style.cssText = "color: blanchedalmond; background-color: cadetblue; border-radius: 15px; padding: 8px";
+        result.textContent = "You Loose!"
+    }
+})
+
+
+function playRound(player_Selection)
 {
+    let computer_Selection = getComputerChoice();
 
     if(player_Selection == computer_Selection)
     {
-        return "Its a Tie!";
+        roundResult.textContent = "It's a tie!";
+        
     }
 
     else if(player_Selection == "rock")
@@ -31,10 +103,17 @@ function playRound(player_Selection, computer_Selection)
         if(computer_Selection == "paper")
         {
             computerScore ++;
-            return "You lose! Paper beats Rock!";
+            computerS.textContent = computerScore;
+            playerS.textContent = playerScore;
+            roundResult.textContent = "You lose! Paper beats Rock!"
         }
-        playerScore++;
-        return  "You Won! Rock beats Scissors!";
+        else
+        {
+            playerScore++;
+            computerS.textContent = computerScore;
+            playerS.textContent = playerScore;
+            roundResult.textContent = "You Won! Rock beats Scissors!"
+        }
     }
 
     else if(player_Selection == "paper")
@@ -42,10 +121,17 @@ function playRound(player_Selection, computer_Selection)
         if(computer_Selection == "scissors")
         {
             computerScore ++;
-            return "You lose! Scissors beats Paper!";
+            computerS.textContent = computerScore;
+            playerS.textContent = playerScore;
+            roundResult.textContent = "You lose! Scissors beats Paper!"
         }
-        playerScore++;
-        return  "You Won! Paper beats Rock!";
+        else
+        {
+            playerScore++;
+            computerS.textContent = computerScore;
+            playerS.textContent = playerScore;
+            roundResult.textContent = "You Won! Paper beats Rock!"
+        }
     }
 
     else if(player_Selection == "scissors")
@@ -53,33 +139,16 @@ function playRound(player_Selection, computer_Selection)
         if(computer_Selection == "rock")
         {
             computerScore ++;
-            return "You lose! Rock beats Scissors!";
+            computerS.textContent = computerScore;
+            playerS.textContent = playerScore;
+            roundResult.textContent = "You lose! Rock beats Scissors!"
         }
-        playerScore++;
-        return  "You Won! Scissors beats Paper!";
+        else
+        {
+            playerScore++;
+            computerS.textContent = computerScore;
+            playerS.textContent = playerScore;
+            roundResult.textContent = "You Won! Scissors beats Paper!"
+        }
     }
-}
-
-for(let i = 0; i < 5; i++)
-{
-    let player_Selection = prompt("Please enter 'Rock', 'Paper' or 'Scissors'.").toLowerCase();
-    let computer_Selection = getComputerChoice();
-    console.log(playRound(player_Selection, computer_Selection));
-    console.log("Your Score:\n", playerScore);
-    console.log("Computer Score:\n", computerScore);
-}
-
-if(playerScore > computerScore)
-{
-    console.log("You Won the Game!");
-}
-
-else if(playerScore < computerScore)
-{
-    console.log("You Lost the Game!");
-}
-
-else if(playerScore == computerScore)
-{
-    console.log("You Tied");
 }
